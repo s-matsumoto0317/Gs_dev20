@@ -30,8 +30,6 @@ class PostsController extends Controller
             $favo_posts = Auth::user()->favo_posts()->get();
              
         
-            
-             
              return view('posts',[
             'posts'=> $posts,
             'favo_posts'=>$favo_posts,
