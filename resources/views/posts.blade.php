@@ -1,6 +1,7 @@
 <!-- resources/views/posts.blade.php -->
 @extends('layouts.app')
 @section('content')
+
     <!-- 全ての投稿リスト -->
      @if (count($posts) > 0)
         <div class="card-body">
