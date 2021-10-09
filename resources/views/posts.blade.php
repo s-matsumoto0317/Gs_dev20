@@ -25,9 +25,7 @@
                                 </td>
                                 
                                 <td class="table-text">
-                                    
                                  @foreach ($post->checks as $check)
-                                 
                                     <div>{{ $result[$check->check_item] }}</div>
                                  @endforeach
                                 </td>

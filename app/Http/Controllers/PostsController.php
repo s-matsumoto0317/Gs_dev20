@@ -21,14 +21,15 @@ class PostsController extends Controller
     {
         //全ての投稿データを取得
         $posts = Post::get();
-        $check = Post::find(1)->checks;
         
+        
+        $result = config('const.check_item');
         
         if (Auth::check()) {
              //ログインユーザーのお気に入りを取得
             $favo_posts = Auth::user()->favo_posts()->get();
              
-            $result = config('const.check_item');
+        
             
              
              return view('posts',[
@@ -40,7 +41,8 @@ class PostsController extends Controller
         }else{
             
             return view('posts',[
-            'posts'=> $posts
+            'posts'=> $posts,
+            'result'=>$result,
             ]);
             
         }
