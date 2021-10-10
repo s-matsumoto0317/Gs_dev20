@@ -272,8 +272,9 @@ class PostsController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
-        $post->delete();
+        //  
+        
+        $post->onDelete('cascade');
         return redirect('/');
     }
     

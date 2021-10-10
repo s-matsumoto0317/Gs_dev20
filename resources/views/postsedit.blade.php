@@ -10,7 +10,7 @@
                 <textarea name="post_desc" class="form-control">{{$post->post_desc}}</textarea>
             </div>
             <div class="form-group row">
-                <p class="col-sm-4 col-form-label">選択（3つまで選択可）</p>
+                <p class="col-sm-4 col-form-label">価値観選択</p>
                 <div class="col-sm-8">
                     @foreach ($check_items as $key => $check_item)
                     {{$key}}

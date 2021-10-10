@@ -8,16 +8,10 @@
             <!-- post_desc -->
             <div class="form-group">
                 <label for="post_desc">内省投稿</label>
-                <textarea type="text" name="post_desc" class="form-control" value="" placeholder="やったこと
-
-
-わかったこと
-
-
-次やること"></textarea>
+                <textarea type="text" name="post_desc" class="form-control" value="" placeholder="やったこと/わかったこと/次やること"></textarea>
             </div>
             <div class="form-group row">
-                <p class="col-sm-4 col-form-label">選択（3つまで選択可）</p>
+                <p class="col-sm-4 col-form-label">価値観選択</p>
                 <div class="col-sm-8">
                     @foreach ($check_items as $key => $check_item)
                         <label>

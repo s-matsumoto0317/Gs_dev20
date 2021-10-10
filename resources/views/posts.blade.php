@@ -9,7 +9,13 @@
                 <table class="table table-striped task-table">
                     <!-- テーブルヘッダ -->
                     <thead>
-                        <th>投稿一覧</th>
+                        <th>投稿日時</th>
+                    　　<th>投稿詳細</th>
+                    　　<th>価値観詳細</th>
+                    　　<th></th>
+                    　　<th></th>
+                    　　<th></th>
+                    　　<th>投稿ユーザー</th>
                         <th>&nbsp;</th>
                     </thead>
                     <!-- テーブル本体 -->
@@ -24,7 +30,7 @@
                                 <td class="table-text">
                                     <div>{{ $post->post_desc }}</div>
                                 </td>
-                                
+                                <!-- 価値観詳細 -->
                                 <td class="table-text">
                                  @foreach ($post->checks as $check)
                                     <div>{{ $result[$check->check_item] }}</div>
@@ -32,22 +38,31 @@
                                 </td>
                                 <!-- 投稿更新ボタン -->
                                  <td>
+                                      @if(Auth::check())
+                                       @if(!Auth::guest() && Auth::user()->id == $post->user_id)
                                  	<form action="{{ url('postsedit/'.$post->id) }}" method="GET">
                                     {{ csrf_field() }}
                                  	 <button type="submit" class="btn btn-primary">
                                  	  編集 
                                  	</button>
                                  	</form>
+                                 	@endif
+                                 	@endif
                                  </td>
-                                <td>
                         　<!-- 投稿削除ボタン -->
+                        　        <td>
+                        　          @if(Auth::check()) 
+                        　          @if(!Auth::guest() && Auth::user()->id == $post->user_id)
              			         <form action="{{ url('post/'.$post->id) }}" method="POST">
                                  {{ csrf_field() }}
                                  {{ method_field('DELETE') }}
+                                 
                                  <button type="submit" class="btn btn-danger">
                                      削除
                                  </button>
                                  </form>
+                                 @endif
+                                 @endif
                                  </td>
  				　　　　　　<!-- いいねボタン -->
                                 <td class="table-text">
@@ -83,6 +98,10 @@
                         <!-- テーブルヘッダ -->
                         <thead>
                             <th>いいね一覧</th>
+                            <th>投稿詳細</th>
+                        　　<th>価値観詳細</th>
+                        　　
+                        　　<th>投稿ユーザー</th>
                             <th>&nbsp;</th>
                         </thead>
                         <!-- テーブル本体 -->
@@ -96,6 +115,12 @@
                                      <!-- 投稿詳細 -->
                                     <td class="table-text">
                                         <div>{{ $favo_post->post_desc }}</div>
+                                    </td>
+                                    <!-- 価値観詳細 -->
+                                    <td class="table-text">
+                                     @foreach ($post->checks as $check)
+                                        <div>{{ $result[$check->check_item] }}</div>
+                                     @endforeach
                                     </td>
                                     <!-- 投稿者名の表示 -->
                                     <td class="table-text">

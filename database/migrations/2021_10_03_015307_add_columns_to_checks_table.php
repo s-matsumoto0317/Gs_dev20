@@ -16,7 +16,8 @@ class AddColumnsToChecksTable extends Migration
         
         Schema::table('checks', function (Blueprint $table) {
             //
-            $table->foreign('posts_id')->references('id')->on('posts');
+            $table->foreign('posts_id')->references('id')->on('posts')->onDelete('cascade');
+            $table->unique(['posts_id', 'checks_id'],'uq_roles');
         });
     }
 
