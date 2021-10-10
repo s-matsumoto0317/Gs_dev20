@@ -3,6 +3,7 @@
 @section('content')
 
     <!-- 全ての投稿リスト -->
+    @if(Auth::check())
      @if (count($posts) > 0)
         <div class="card-body">
             <div class="card-body">
@@ -133,5 +134,6 @@
                 </div>
             </div>		
         @endif
+　　@endif
 　　@endif
 @endsection
