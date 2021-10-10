@@ -31,7 +31,8 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 
-                <a href="https://a1ddb1b1ef774b7fa06de5dea3fecc15.vfs.cloud9.us-east-1.amazonaws.com/posts/new">
+                <a href=" {{ url('posts/new') }}">
+                
                 内省投稿</a>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">

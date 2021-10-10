@@ -8,7 +8,13 @@
             <!-- post_desc -->
             <div class="form-group">
                 <label for="post_desc">内省投稿</label>
-                <textarea type="text" name="post_desc" class="form-control" value=""></textarea>
+                <textarea type="text" name="post_desc" class="form-control" value="" placeholder="やったこと
+
+
+わかったこと
+
+
+次やること"></textarea>
             </div>
             <div class="form-group row">
                 <p class="col-sm-4 col-form-label">選択（3つまで選択可）</p>
